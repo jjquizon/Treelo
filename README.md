@@ -1,4 +1,6 @@
-# TrelloLite
+# Treelo
+
+### A clone of Trello
 
 What is Trello?
 
