@@ -1,12 +1,12 @@
-TrelloClone.Collections.Lists = Backbone.Collection.extend({
-  model: TrelloClone.Models.List,
+Treelo.Collections.Lists = Backbone.Collection.extend({
+  model: Treelo.Models.List,
   url: "api/lists",
 
   getOrFetch: function (id) {
     var getList = this.get(id);
 
     if (!getList){
-      getList = new TrelloClone.Models.List({
+      getList = new Treelo.Models.List({
         id: id
       });
 

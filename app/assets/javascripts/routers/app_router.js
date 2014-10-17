@@ -1,4 +1,4 @@
-TrelloClone.Routers.AppRouter = Backbone.Router.extend({
+Treelo.Routers.AppRouter = Backbone.Router.extend({
   routes: {
     "" : "boardsIndex",
     "api/boards/new" : "boardsNew",
@@ -10,17 +10,17 @@ TrelloClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   boardsIndex: function () {
-    TrelloClone.Collections.boards.fetch();
-    var boardsIndexView = new TrelloClone.Views.BoardsIndex({
-      collection: TrelloClone.Collections.boards
+    Treelo.Collections.boards.fetch();
+    var boardsIndexView = new Treelo.Views.BoardsIndex({
+      collection: Treelo.Collections.boards
     });
 
     this._swapView(boardsIndexView);
   },
 
   boardShow: function (id) {
-    var board = TrelloClone.Collections.boards.getOrFetch(id);
-    var boardShowView = new TrelloClone.Views.BoardShow({
+    var board = Treelo.Collections.boards.getOrFetch(id);
+    var boardShowView = new Treelo.Views.BoardShow({
       model: board
     });
 
@@ -28,7 +28,7 @@ TrelloClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   boardsNew: function () {
-    var newView = new TrelloClone.Views.BoardsNew();
+    var newView = new Treelo.Views.BoardsNew();
     this._swapView(newView);
   },
 

@@ -1,4 +1,4 @@
-TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
+Treelo.Views.ListShow = Backbone.CompositeView.extend({
   template: JST["lists/show"],
 
     orderOptions: {
@@ -14,7 +14,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     this.listenTo(this.model.cards(), 'add', this.addCard);
     this.listenTo(this.model.cards(), 'remove', this.removeCard);
 
-    var cardNewView = new TrelloClone.Views.CardsNew({ model: this.model });
+    var cardNewView = new Treelo.Views.CardsNew({ model: this.model });
 
   },
 
@@ -27,7 +27,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   },
 
   addCard: function(card) {
-    var cardView = new TrelloClone.Views.CardShow({ model: card });
+    var cardView = new Treelo.Views.CardShow({ model: card });
     this.addSubview(".show-cards", cardView.render());
   },
 
@@ -60,7 +60,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     $newInput = $form.find(".new-card-title");
     var cardTitle = $newInput.val();
 
-    var newCard = new TrelloClone.Models.Card({
+    var newCard = new Treelo.Models.Card({
       title: cardTitle,
       list_id: this.model.id
     });
@@ -79,7 +79,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     var $cardDisplay = ui.item,
         cardId = $cardDisplay.data('card-id'),
         newOrd = $cardDisplay.index();
-    var cardClone = new TrelloClone.Models.Card({
+    var cardClone = new Treelo.Models.Card({
       id: cardId,
       list_id: this.model.id,
       ord: newOrd
@@ -110,7 +110,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   },
 
   renderCardForm: function () {
-    var view = new TrelloClone.Views.CardsNew({
+    var view = new Treelo.Views.CardsNew({
       collection: this.collection
     });
     this.addSubview('.new-cards-form', view);

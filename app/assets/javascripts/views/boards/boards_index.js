@@ -1,4 +1,4 @@
-TrelloClone.Views.BoardIndexRow = Backbone.View.extend({
+Treelo.Views.BoardIndexRow = Backbone.View.extend({
   template: JST["boards/board_subview"],
 
   render: function() {
@@ -9,21 +9,22 @@ TrelloClone.Views.BoardIndexRow = Backbone.View.extend({
 
 });
 
-TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
+Treelo.Views.BoardsIndex = Backbone.CompositeView.extend({
   template: JST["boards/index"],
 
   initialize: function ($rootEl) {
+    var view = this;
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addBoardSubview);
     this.listenTo(this.collection, 'remove', this.removeIndexSubview);
 
     //setup subview, each over collection
     this.collection.each(function (board) {
-      var boardSubview = new TrelloClone.Views.BoardIndexRow ({ model: board});
+      var boardSubview = new Treelo.Views.BoardIndexRow ({ model: board});
       view.addSubview(".board-index", boardSubview.render());
     });
 
-    var newBoardView = new TrelloClone.Views.BoardsNew({ model: this.model });
+    var newBoardView = new Treelo.Views.BoardsNew({ model: this.model });
     this.addSubview(".new-board", newBoardView.render());
   },
 
@@ -32,7 +33,7 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
   },
 
   addBoardSubview: function (board) {
-    var boardSubview = new TrelloClone.Views.BoardIndexRow ({ model: board});
+    var boardSubview = new Treelo.Views.BoardIndexRow ({ model: board});
     this.addSubview(".board-index", boardSubview.render());
   },
 
@@ -47,7 +48,7 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
     this.removeSubview(".board-index", subview);
   },
 
-  boardsIndexSubview: TrelloClone.Views.BoardIndexRow,
+  boardsIndexSubview: Treelo.Views.BoardIndexRow,
 
   render: function () {
     var renderedContent = this.template({ boards: this.collection });

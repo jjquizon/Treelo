@@ -1,4 +1,4 @@
-window.TrelloClone = {
+window.Treelo = {
   Models: {},
   Collections: {},
   Views: {},
@@ -7,12 +7,12 @@ window.TrelloClone = {
 
     console.log("Starting");
     this.$rootEl = $("main");
-    var router = new TrelloClone.Routers.AppRouter(this.$rootEl);
+    var router = new Treelo.Routers.AppRouter(this.$rootEl);
     Backbone.history.start();
   }
 };
 
-$(TrelloClone.initialize);
+$(Treelo.initialize);
 
 
 Backbone.CompositeView = Backbone.View.extend({

@@ -1,4 +1,4 @@
-TrelloClone.Views.BoardsNew = Backbone.CompositeView.extend({
+Treelo.Views.BoardsNew = Backbone.CompositeView.extend({
   template: JST["boards/new"],
 
   events: {
@@ -14,11 +14,11 @@ TrelloClone.Views.BoardsNew = Backbone.CompositeView.extend({
   createBoard: function () {
     event.preventDefault();
     var boardTitle = this.$('.new-board-title').val();
-    var newBoard = new TrelloClone.Models.Board({"title": boardTitle});
+    var newBoard = new Treelo.Models.Board({"title": boardTitle});
     var that = this;
     newBoard.save({}, {
       success: function () {
-          TrelloClone.Collections.boards.add(newBoard);
+          Treelo.Collections.boards.add(newBoard);
           Backbone.history.navigate("api/boards/" + newBoard.id, { trigger: true});
       }
     });

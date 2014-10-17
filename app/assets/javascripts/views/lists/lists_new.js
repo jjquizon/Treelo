@@ -1,4 +1,4 @@
-TrelloClone.Views.ListsNew = Backbone.View.extend({
+Treelo.Views.ListsNew = Backbone.View.extend({
   template: JST["lists/new"],
 
   events: {
@@ -14,7 +14,7 @@ TrelloClone.Views.ListsNew = Backbone.View.extend({
   createList: function () {
     event.preventDefault();
     var listTitle = this.$('#list-title').val();
-    var newList = new TrelloClone.Models.List({
+    var newList = new Treelo.Models.List({
       "title": listTitle,
       "board_id" : this.model.id
       });
