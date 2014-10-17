@@ -1,0 +1,107 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery.ui.all
+ *= require_tree .
+ */
+
+@import "bootstrap";
+@import "font-awesome";
+
+
+.board-sub {
+  padding: 10px;
+  color: #ffffff;
+  background: #1A5477;
+  width: 250px;
+  height: 125px;
+  border-radius: 5px;
+  margin: 5px;
+
+  a {
+    color: #ffffff;
+  }
+}
+
+#show-lists {
+  white-space: nowrap;
+  display: inline-block;
+  overflow-y: hidden;
+}
+
+
+
+.show-list {
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  background: #E3E3E3;
+  border-radius: 5px;
+  margin: 5px;
+  white-space: normal;
+  width: 260px;
+  margin: 0 5px;
+  max-height: 100%;
+  overflow-y: hidden;
+  padding: 4px 3px 3px;
+  overflow-x: hidden;
+  h2 {
+    display: inline-block;
+  }
+  span {
+    float: right;
+  }
+}
+
+body {
+  background: #23719F;
+  padding-top: 60px;
+  overflow-x: hidden;
+}
+
+.delete-list {
+  color: black;
+}
+
+.list-window {
+  position: absolute;
+  white-space: nowrap;
+  overflow-x: auto;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  overflow-y: hidden;
+  bottom: 0;
+  top: 150px;
+  left: 0;
+  right: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+div.container-fluid {
+  padding: 0;
+}
+
+.new-lists-form {
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.card {
+  border: 1px solid black;
+  margin: 0 5px 5px 5px;
+  padding: 2px;
+  font-size: 1.2em;
+  height: 1.5em;
+  white-space: normal;
+  word-wrap: break-word;
+}
