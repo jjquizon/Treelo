@@ -24,3 +24,7 @@ group :development do
   gem 'pry-rails'
   # gem 'debugger'
 end
+
+group :production do
+  gem newrelic_rpm
+end
